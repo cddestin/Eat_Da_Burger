@@ -4,10 +4,10 @@ var methodOverride =require('method-override');
 var exphbs = require('express-handlebars');
 
 // use port 3000 unless there exists a preconfigured port
-var PORT = process.envPORT || 3000;
+var PORT = process.env.PORT || 3000;
 
 var  app = express();
-app.use(express.static(__dirname + 'public'));
+app.use(express.static('public'));
  app.use(bodyParser.urlencoded({extended:false}))
 
  app.use(methodOverride('_method'));
